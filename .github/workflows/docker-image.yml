@@ -6,7 +6,9 @@ env:
 on:
   push:
     branches: [ "main" ]
-    
+  schedule:
+    - cron: '4 4 4 * *'
+        
 jobs:
 
   build:
