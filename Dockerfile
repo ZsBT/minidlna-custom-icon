@@ -18,6 +18,7 @@ RUN make install
 RUN minidlnad -V
 
 
+
 FROM $GNUDIST
 ENV MINIDLNA_CONFIG /etc/minidlna.conf
 ENV MINIDLNA_EXTRA_ARGS -S
