@@ -2,7 +2,7 @@ ARG GNUDIST=debian:stable
 
 FROM $GNUDIST as builder
 
-RUN sed -e 's/deb /deb-src /' /etc/apt/sources.list >/etc/apt/sources.list.d/src.list
+RUN cd /etc/apt/sources.list.d && sed 's/Types: deb/Types: deb-src/' debian.sources >debian-src.sources
 RUN apt -qq update && apt -y install git build-essential >/dev/null
 RUN apt -y build-dep minidlna >/dev/null
 
